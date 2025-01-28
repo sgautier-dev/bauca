@@ -16,17 +16,14 @@ export default function Story() {
 						</h1>
 						<div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
 							<p className="text-pretty text-lg font-medium sm:text-xl/8">
-								Je m’appelle Benoît, et je suis le créateur de Baüca. Tout a
-								commencé avec une passion pour les produits simples et
-								authentiques, et l’envie de valoriser les richesses locales.
-								Inspiré par les producteurs avec lesquels je travaille et mon
-								expérience dans le développement durable, j’ai décidé de lancer
-								un bar ambulant dédié aux tisanes bio, jus frais, et
-								gourmandises au miel. Ce projet me permet de partager des
-								moments de convivialité sur les marchés tout en mettant en
-								lumière des savoir-faire uniques. <br /> Découvrez mes créations
-								artisanales et laissez-vous séduire par des saveurs locales et
-								naturelles.
+								Je m’appelle Benoît, et je suis le créateur de Baüca. Ce projet
+								est né de ma passion pour les produits simples et authentiques,
+								et de mon envie de valoriser les producteurs locaux. Inspiré par
+								mes expériences en développement durable et mes rencontres avec
+								des artisans, j’ai lancé un bar ambulant pour partager des
+								tisanes bio, jus frais et gourmandises au miel. <br /> Baüca, c’est
+								plus qu’un stand, c’est une invitation à savourer des moments
+								conviviaux et des saveurs locales.
 							</p>
 							<div className="mt-10 flex items-center gap-x-6">
 								<Link

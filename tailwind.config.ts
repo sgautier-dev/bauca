@@ -15,6 +15,9 @@ export default {
 				darkGreen: "#1f432d",
 				softBeige: "#f7f4e9",
 			},
+			fontFamily: {
+				montserrat: ["var(--font-montserrat)"],
+			},
 		},
 	},
 	plugins: [],
