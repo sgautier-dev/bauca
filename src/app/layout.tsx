@@ -21,7 +21,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="en">
+		<html lang="fr">
 			<body
 				className={`${montserrat.variable} antialiased mx-auto w-full max-w-screen-2xl font-montserrat`}
 			>
