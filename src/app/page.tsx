@@ -3,6 +3,7 @@ import Products from "@/components/Products"
 import ProductsCTA from "@/components/ProductsCTA"
 import Story from "@/components/Story"
 import Location from "@/components/Location"
+import Contact from "@/components/Contact"
 
 export default function Home() {
 	return (
@@ -12,6 +13,7 @@ export default function Home() {
 			<Products />
 			<ProductsCTA />
 			<Location />
+			<Contact />
 		</main>
 	)
 }
