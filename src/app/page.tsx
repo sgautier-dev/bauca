@@ -4,6 +4,7 @@ import ProductsCTA from "@/components/ProductsCTA"
 import Story from "@/components/Story"
 import Location from "@/components/Location"
 import Contact from "@/components/Contact"
+import Footer from "@/components/Footer"
 
 export default function Home() {
 	return (
@@ -14,6 +15,7 @@ export default function Home() {
 			<ProductsCTA />
 			<Location />
 			<Contact />
+			<Footer />
 		</main>
 	)
 }

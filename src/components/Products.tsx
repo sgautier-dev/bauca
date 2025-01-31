@@ -58,9 +58,9 @@ export default function Products() {
 								src={symbol}
 								className="h-28 sm:h-32 w-auto"
 							/>
-							<h1 className="mt-24  text-pretty text-5xl font-semibold tracking-tight sm:text-7xl">
+							<h2 className="mt-24  text-pretty text-5xl font-semibold tracking-tight sm:text-7xl">
 								À déguster chez Baüca
-							</h1>
+							</h2>
 							<p className="mt-8 text-pretty text-lg font-medium sm:max-w-md sm:text-xl/8 lg:max-w-none">
 								Chaque boisson et gourmandise que je prépare est issue d’une
 								sélection rigoureuse de produits bio et locaux. Des tisanes aux
