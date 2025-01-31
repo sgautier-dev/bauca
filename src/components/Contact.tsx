@@ -1,6 +1,13 @@
+"use client"
+
 import { Phone } from "lucide-react"
-import { useRef, useState } from "react"
+import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react"
 import { useAction } from "next-safe-action/hooks"
+import sendEmail from "@/actions/sendEmail"
+import useRecaptcha from "@/lib/hooks/useRecaptcha"
+import Script from "next/script"
+import { Loader2 } from "lucide-react"
+import { DisplayServerActionResponse } from "./DisplayServerActionResponse"
 
 export default function Contact() {
 	const [formData, setFormData] = useState({
@@ -10,11 +17,65 @@ export default function Contact() {
 		phone: "",
 		message: "",
 	})
-    const formRef = useRef<HTMLFormElement>(null)
+	const formRef = useRef<HTMLFormElement>(null)
 	const { execute, result, isExecuting } = useAction(sendEmail)
-    
+
+	//hidding Google reCaptcha badge from page
+	useEffect(() => {
+		const style = document.createElement("style")
+		style.innerHTML = `
+		  .grecaptcha-badge {
+			visibility: hidden !important;
+		  }
+		`
+		document.head.appendChild(style)
+	}, [])
+
+	const { getRecaptchaToken } = useRecaptcha("contact_form")
+
+	const handleChange = (
+		e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+	) => {
+		const { name, value } = e.target
+		setFormData((prevData) => ({
+			...prevData,
+			[name]: value,
+		}))
+	}
+
+	const handleSubmit = async (e: FormEvent) => {
+		e.preventDefault()
+
+		const token = await getRecaptchaToken()
+
+		if (!token) {
+			alert(
+				"Erreur lors de la vérification de sécurité reCaptcha. Veuillez réessayer."
+			)
+
+			return
+		}
+
+		execute(formData)
+	}
+
+	useEffect(() => {
+		if (!isExecuting && result.data?.message) {
+			if (formRef.current) {
+				formRef.current.reset() // Reset form if success
+			}
+			setFormData({
+				firstName: "",
+				lastName: "",
+				email: "",
+				phone: "",
+				message: "",
+			})
+		}
+	}, [isExecuting, result])
+
 	return (
-		<div className="relative isolate">
+		<div className="relative isolate" id="contact">
 			<div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
 				<div className="relative px-6 pb-20 pt-24 sm:pt-32 lg:static lg:px-8 lg:py-48">
 					<div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
@@ -71,43 +132,49 @@ export default function Contact() {
 					</div>
 				</div>
 				<form
-					action="#"
-					method="POST"
+					ref={formRef}
+					onSubmit={handleSubmit}
 					className="px-6 pb-24 pt-20 sm:pb-32 lg:px-8 lg:py-48"
 				>
 					<div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
 						<div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
 							<div>
 								<label
-									htmlFor="first-name"
+									htmlFor="firstName"
 									className="block text-sm/6 font-semibold"
 								>
-									First name
+									Prénom
 								</label>
 								<div className="mt-2.5">
 									<input
-										id="first-name"
-										name="first-name"
+										id="firstName"
+										name="firstName"
 										type="text"
 										autoComplete="given-name"
+										value={formData.firstName}
+										onChange={handleChange}
 										className="block w-full rounded-md bg-white px-3.5 py-2 text-base outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+										required
 									/>
 								</div>
 							</div>
 							<div>
 								<label
-									htmlFor="last-name"
+									htmlFor="lastName"
 									className="block text-sm/6 font-semibold"
 								>
-									Last name
+									Nom
 								</label>
 								<div className="mt-2.5">
 									<input
-										id="last-name"
-										name="last-name"
+										id="lastName"
+										name="lastName"
 										type="text"
 										autoComplete="family-name"
+										value={formData.lastName}
+										onChange={handleChange}
 										className="block w-full rounded-md bg-white px-3.5 py-2 text-base outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+										required
 									/>
 								</div>
 							</div>
@@ -124,23 +191,33 @@ export default function Contact() {
 										name="email"
 										type="email"
 										autoComplete="email"
+										value={formData.email}
+										onChange={handleChange}
 										className="block w-full rounded-md bg-white px-3.5 py-2 text-base outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
+										required
 									/>
 								</div>
 							</div>
 							<div className="sm:col-span-2">
-								<label
-									htmlFor="phone-number"
-									className="block text-sm/6 font-semibold"
-								>
-									Phone number
-								</label>
+								<div className="flex justify-between text-sm/6">
+									<label
+										htmlFor="phone"
+										className="block font-semibold "
+									>
+										Tél
+									</label>
+									<p id="phone-description" className="text-gray-400">
+										Optionnel
+									</p>
+								</div>
 								<div className="mt-2.5">
 									<input
-										id="phone-number"
-										name="phone-number"
+										id="phone"
+										name="phone"
 										type="tel"
 										autoComplete="tel"
+										value={formData.phone}
+										onChange={handleChange}
 										className="block w-full rounded-md bg-white px-3.5 py-2 text-base outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
 									/>
 								</div>
@@ -157,8 +234,10 @@ export default function Contact() {
 										id="message"
 										name="message"
 										rows={4}
+										value={formData.message}
+										onChange={handleChange}
 										className="block w-full rounded-md bg-white px-3.5 py-2 text-base outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-										defaultValue={""}
+										required
 									/>
 								</div>
 							</div>
@@ -168,12 +247,20 @@ export default function Contact() {
 								type="submit"
 								className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
 							>
-								Send message
+								{isExecuting ? (
+									<Loader2 className="h-5 w-5 animate-spin" />
+								) : (
+									"Envoyer"
+								)}
 							</button>
 						</div>
 					</div>
+					<DisplayServerActionResponse result={result} />
 				</form>
 			</div>
+			<Script
+				src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+			/>
 		</div>
 	)
 }
