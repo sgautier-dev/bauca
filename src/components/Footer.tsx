@@ -1,7 +1,7 @@
 const navigation = [
 	{
 		name: "Facebook",
-		href: "#",
+		href: "https://www.facebook.com/profile.php?id=61572918950737",
 		icon: (props: React.SVGProps<SVGSVGElement>) => (
 			<svg fill="currentColor" viewBox="0 0 24 24" {...props}>
 				<path
@@ -49,6 +49,8 @@ export default function Footer() {
 						<a
 							key={item.name}
 							href={item.href}
+							target="_blank"
+							rel="noopener noreferrer"
 							className="text-gray-600 hover:text-gray-800"
 						>
 							<span className="sr-only">{item.name}</span>
