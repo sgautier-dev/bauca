@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Montserrat } from "next/font/google"
 
 import "./globals.css"
+import BackToTop from "@/components/BackToTop"
 
 const montserrat = Montserrat({
 	subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
 				className={`${montserrat.variable} antialiased mx-auto w-full max-w-screen-2xl font-montserrat`}
 			>
 				{children}
+				<BackToTop />
 			</body>
 		</html>
 	)
