@@ -29,7 +29,7 @@ const sendEmail = actionClient
 			await checkArcJetProtection()
 
 			await resend.emails.send({
-				from: "Baüca <onboarding@resend.dev>", // onboarding@resend.dev resend temp address
+				from: "Baüca <contact@bauca.fr>", // onboarding@resend.dev for resend temp address
 				to: ["contact@bauca.fr"],
 				replyTo: email as string,
 				subject: `Message de ${firstName} ${lastName}`,
