@@ -14,7 +14,7 @@ const navigation = [
 	},
 	{
 		name: "Instagram",
-		href: "#",
+		href: "https://www.instagram.com/bauca_terracoopa",
 		icon: (props: React.SVGProps<SVGSVGElement>) => (
 			<svg fill="currentColor" viewBox="0 0 24 24" {...props}>
 				<path
