@@ -7,13 +7,6 @@
 	--foreground: #1f432d; /* vert foncé */
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a; /* Fond noir profond */
-		--foreground: #f7f4e9; /* Texte beige doux */
-	}
-}
-
 body {
 	color: var(--foreground);
 	background: var(--background);
