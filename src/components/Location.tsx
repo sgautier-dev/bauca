@@ -75,8 +75,7 @@ export default function Location() {
 									className="text-darkGreen font-semibold hover:underline"
 								>
 									Instagram
-								</a>{" "}
-								. Vous pourrez me suivre sur les événements que je réalise dans
+								</a>. Vous pourrez me suivre sur les événements que je réalise dans
 								l’année. Au plaisir de vous rencontrer !
 							</p>
 						</div>
