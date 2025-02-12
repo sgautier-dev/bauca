@@ -1,26 +1,26 @@
 import Image from "next/image"
 import productsBg from "@/images/products-bg.jpg"
-import { Leaf, GlassWater, Cookie } from "lucide-react";
+import { Leaf, GlassWater, Cookie } from "lucide-react"
 import Link from "next/link"
 
 const cards = [
 	{
-		name: "Tisanes et Thés",
+		name: "Gâteaux de voyage",
 		description:
-			"Une sélection de plantes et de thés bio, cueillis localement et proposés en vrac ou en sachets. Des infusions naturelles à savourer sur place ou à emporter.",
+			"Des madeleines, des barres de céréales, des tartelettes caramiel, des macarons, des gâteaux sans gluten* et sans lactose* variés, confectionnés avec du miel de Sainfoin, de montagne et des causses, pour une touche sucrée naturelle et savoureuse. (* Ne convient pas aux personnes allergiques car l’atelier utilise de la farine et des produits laitiers.)",
+		icon: Cookie,
+	},
+	{
+		name: "Tisanes",
+		description:
+			"Une sélection de plantes bio cultivées ou cueillies localement, dont les mélanges sont réalisés par mes soins selon des recettes originales. Les plantes sont proposées en vrac ou en sachets, à savourer sur place ou à emporter.",
 		icon: Leaf,
 	},
 	{
-		name: "Jus et Smoothies",
+		name: "Jus frais et smoothies ",
 		description:
-			"Des boissons fraîches et vitaminées, préparées avec des fruits et légumes de saison. Une approche zéro-gaspi qui valorise les produits imparfaits mais pleins de goût.",
+			"Des boissons fraiches et vitaminées, saines et naturelles, préparées avec des fruits et légumes bio et de saison. Je propose des recettes gourmandes et très variées avec une approche santé et bien-être.",
 		icon: GlassWater,
-	},
-	{
-		name: "Pâtisseries au Miel",
-		description:
-			"Des madeleines, financiers, nougats et autres douceurs, confectionnés avec du miel local pour une touche sucrée naturelle et savoureuse.",
-		icon: Cookie,
 	},
 ]
 export default function ProductsCTA() {
@@ -37,11 +37,11 @@ export default function ProductsCTA() {
 			<div className=" relative mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="mx-auto max-w-2xl lg:mx-0">
 					<h2 className="text-5xl font-semibold tracking-tight sm:text-7xl">
-						Ce que je propose
+						Ma gamme de produits
 					</h2>
 					<p className="mt-8 text-pretty text-lg font-medium sm:text-xl/8">
 						Venez découvrir mes tisanes, jus et gourmandises directement sur les
-						marchés de Montpellier et Nîmes. À très bientôt !
+						marchés de Montpellier et alentours. À très bientôt !
 					</p>
 				</div>
 				<div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8">

@@ -11,7 +11,7 @@ export default function Hero() {
 						<Image
 							alt="Baüca, bar à tisane et gourmandises au miel"
 							src={logo}
-							className="h-28 sm:h-32 w-auto"
+							className="h-32 sm:h-48 w-auto"
 						/>
 						{/* <div className="hidden sm:mt-32 sm:flex lg:mt-16">
 							<div className="relative rounded-full px-3 py-1 text-sm/6 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
@@ -29,10 +29,10 @@ export default function Hero() {
 							Savourez l&apos;authentique
 						</h1>
 						<p className="mt-8 text-pretty text-lg font-medium sm:text-xl/8">
-							Tisanes bio, jus frais, smoothies, et gourmandises au miel.
-							Découvrez des saveurs authentiques, fabriquées à partir de
-							produits locaux et bio, directement sur les marchés de Montpellier
-							et Nîmes.
+							Gourmandises au miel, tisanes, jus frais et smoothies… Venez me
+							rencontrer sur les marchés de Montpellier et alentours, pour
+							découvrir des produits sains et gourmands, fabriqués à partir du
+							produits bio et locaux.
 						</p>
 						<div className="mt-10 flex items-center gap-x-6">
 							<Link

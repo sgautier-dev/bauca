@@ -5,28 +5,23 @@ import locationImg from "@/images/location.jpg"
 const markets = [
 	{
 		name: "Marché des Arceaux – Montpellier",
-		day: "Mardi matin",
-		hours: "7h - 13h30",
-	},
-	{
-		name: "Mini-marché Orange – Montpellier",
-		day: "Mardi après-midi",
-		hours: "15h - 17h",
+		day: "Les mardis matin ",
+		hours: "de 8h à 13h",
 	},
 	{
 		name: "Marché de la Halle Tropisme",
-		day: "Jeudi soir",
-		hours: "17h - 20h",
+		day: "Les jeudis soir ",
+		hours: "de 17h à 20h",
 	},
 	{
 		name: "Marché de Castelnau-le-Lez",
-		day: "Samedi matin",
-		hours: "7h - 13h30",
+		day: "Les samedis matin ",
+		hours: "de 8h à 13h",
 	},
 	{
-		name: "Marché de Prades-le-Lez",
-		day: "Dimanche matin",
-		hours: "7h - 13h30",
+		name: "Marché de La Grande Motte",
+		day: "Les dimanches matin ",
+		hours: "de 8h à 13h",
 	},
 ]
 
@@ -42,11 +37,11 @@ export default function Location() {
 								Retrouvez-moi sur les marchés
 							</h2>
 							<p className="mt-2 text-pretty text-4xl font-semibold tracking-tight sm:text-5xl">
-								Où me trouver ?
+								Où me rencontrer ?
 							</p>
 							<p className="mt-6 text-lg">
-								Venez déguster mes tisanes, jus frais et gourmandises au miel
-								sur les marchés de Montpellier et alentours.
+								Venez déguster mes gourmandises au miel, mes tisanes et jus
+								frais sur les marchés de Montpellier et des alentours.
 							</p>
 
 							{/* Liste des marchés */}
@@ -71,6 +66,19 @@ export default function Location() {
 									</div>
 								))}
 							</dl>
+							<p className="mt-6 text-lg">
+								Pour suivre l’actualité de mon stand, rendez-vous sur{" "}
+								<a
+									href="https://www.instagram.com/bauca_terracoopa"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="text-darkGreen font-semibold hover:underline"
+								>
+									Instagram
+								</a>{" "}
+								. Vous pourrez me suivre sur les événements que je réalise dans
+								l’année. Au plaisir de vous rencontrer !
+							</p>
 						</div>
 					</div>
 

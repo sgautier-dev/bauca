@@ -63,10 +63,21 @@ export default function Products() {
 							</h2>
 							<p className="mt-8 text-pretty text-lg font-medium sm:max-w-md sm:text-xl/8 lg:max-w-none">
 								Chaque boisson et gourmandise que je prépare est issue d’une
-								sélection rigoureuse de produits bio et locaux. Des tisanes aux
+								sélection rigoureuse de produits bio et locaux. Ainsi, j’ai
+								choisi d’utiliser du miel dans mes gâteaux, pour réduire la
+								quantité de sucre et utiliser une ressource locale. Le miel que
+								j’utilise a été produits sur les ruchés de Loïc Caron proche de
+								Clermont L’Hérault. Je travaille aussi avec des farines bio,
+								dont les blés viennent du Gard et de l’Hérault, moulus
+								localement par Moulin de Sauret. Pour les jus frais, je
+								travaille avec les maraîchers de la coopérative qui produisent
+								leurs légumes et leurs fruits sur les terres de Clapiers, Jacou
+								et Montpellier. Pour les tisanes, je travaille avec les
+								productrices et les producteurs, les cueilleuses et les
+								cueilleurs issus du réseau Simple de la Région. Des tisanes au
 								jus frais, en passant par mes pâtisseries au miel, chaque
-								recette est conçue avec soin pour révéler des saveurs simples et
-								naturelles.
+								recette est conçue par mes soins pour révéler des saveurs
+								simples et naturelles.
 							</p>
 						</div>
 						<div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">

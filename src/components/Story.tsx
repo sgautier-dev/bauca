@@ -12,18 +12,24 @@ export default function Story() {
 				<div className="mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8">
 					<div className="mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-8 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8">
 						<h2 className="max-w-2xl text-balance text-5xl font-semibold tracking-tight sm:text-7xl lg:col-span-2 xl:col-auto">
-							L’histoire derrière Baüca
+							Baüca en quelques mots…
 						</h2>
 						<div className="mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1">
 							<p className="text-pretty text-lg font-medium sm:text-xl/8">
-								Je m’appelle Benoît, et je suis le créateur de Baüca. Ce projet
-								est né de ma passion pour les produits simples et authentiques,
-								et de mon envie de valoriser les producteurs locaux. Inspiré par
-								mes expériences en développement durable et mes rencontres avec
-								des artisans, j’ai lancé un bar ambulant pour partager des
-								tisanes bio, jus frais et gourmandises au miel. <br /> Baüca, c’est
-								plus qu’un stand, c’est une invitation à savourer des moments
-								conviviaux et des saveurs locales.
+								Je m’appelle Benoit et je suis le créateur de Baüca. Je fais
+								partie de la coopérative TerraCoopa installée à Montpellier.
+								Baüca, késako ? Ça vient de l’occitan et ça signifie herbe fine,
+								herbe sèche. Au travers de mes produits, vous l’aurez compris,
+								je souhaite partager mon goût pour des produits du terroir et
+								pour la nature. Ce projet est né de ma passion pour des produits
+								simples et authentiques, et de mon envie de valoriser les
+								producteurs locaux. Inspiré pas ma formation en développement
+								durable et mes rencontres avec des artisans, j’ai souhaité
+								lancer ce bar ambulant pour faire découvrir mes recettes
+								gourmandes de gâteaux de voyage, de tisanes, de smoothies et de
+								jus frais. Baüca, plus qu’un stand, c’est une invitation à
+								prendre le temps de la rencontre et de moments conviviaux tout
+								en savourant des produits simples et naturels.
 							</p>
 							<div className="mt-10 flex items-center gap-x-6">
 								<Link
