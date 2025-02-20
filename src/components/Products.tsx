@@ -69,7 +69,7 @@ export default function Products() {
 								j’utilise a été produits sur les ruchés de Loïc Caron proche de
 								Clermont L’Hérault. Je travaille aussi avec des farines bio,
 								dont les blés viennent du Gard et de l’Hérault, moulus
-								localement par Moulin de Sauret. Pour les jus frais, je
+								localement par le Moulin de Sauret. Pour les jus frais, je
 								travaille avec les maraîchers de la coopérative qui produisent
 								leurs légumes et leurs fruits sur les terres de Clapiers, Jacou
 								et Montpellier. Pour les tisanes, je travaille avec les

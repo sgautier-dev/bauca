@@ -23,7 +23,7 @@ export default function Story() {
 								je souhaite partager mon goût pour des produits du terroir et
 								pour la nature. Ce projet est né de ma passion pour des produits
 								simples et authentiques, et de mon envie de valoriser les
-								producteurs locaux. Inspiré pas ma formation en développement
+								producteurs locaux. Inspiré par ma formation en développement
 								durable et mes rencontres avec des artisans, j’ai souhaité
 								lancer ce bar ambulant pour faire découvrir mes recettes
 								gourmandes de gâteaux de voyage, de tisanes, de smoothies et de
