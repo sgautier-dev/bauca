@@ -4,8 +4,6 @@ import { Phone } from "lucide-react"
 import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react"
 import { useAction } from "next-safe-action/hooks"
 import sendEmail from "@/actions/sendEmail"
-import useRecaptcha from "@/lib/hooks/useRecaptcha"
-import Script from "next/script"
 import { Loader2 } from "lucide-react"
 import { DisplayServerActionResponse } from "./DisplayServerActionResponse"
 
@@ -20,19 +18,6 @@ export default function Contact() {
 	const formRef = useRef<HTMLFormElement>(null)
 	const { execute, result, isExecuting } = useAction(sendEmail)
 
-	//hidding Google reCaptcha badge from page
-	useEffect(() => {
-		const style = document.createElement("style")
-		style.innerHTML = `
-		  .grecaptcha-badge {
-			visibility: hidden !important;
-		  }
-		`
-		document.head.appendChild(style)
-	}, [])
-
-	const { getRecaptchaToken } = useRecaptcha("contact_form")
-
 	const handleChange = (
 		e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
 	) => {
@@ -45,16 +30,6 @@ export default function Contact() {
 
 	const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault()
-
-		const token = await getRecaptchaToken()
-
-		if (!token) {
-			alert(
-				"Erreur lors de la vérification de sécurité reCaptcha. Veuillez réessayer."
-			)
-
-			return
-		}
 
 		execute(formData)
 	}
@@ -255,9 +230,6 @@ export default function Contact() {
 					<DisplayServerActionResponse result={result} />
 				</form>
 			</div>
-			<Script
-				src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-			/>
 		</div>
 	)
 }
