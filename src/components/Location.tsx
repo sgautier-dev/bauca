@@ -72,7 +72,7 @@ export default function Location() {
 									rel="noopener noreferrer"
 									className="rounded-md bg-lightGreen px-3.5 py-2.5 text-sm font-semibold text-black shadow-sm hover:bg-lightGreen/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lightGreen"
 								>
-									📍 Voir mes emplacements sur Facebook
+									📍 Voir <span className="hidden sm:inline">mes emplacements</span> sur Facebook
 								</a>
 							</p>
 
