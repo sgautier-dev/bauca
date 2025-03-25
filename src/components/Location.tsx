@@ -1,5 +1,5 @@
 import Image from "next/image"
-import locationImg from "@/images/location.jpg"
+import locationImg from "@/images/benoit-location.jpg"
 
 // const markets = [
 // 	{

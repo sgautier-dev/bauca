@@ -5,6 +5,7 @@ import Story from "@/components/Story"
 import Location from "@/components/Location"
 import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
+import Pros from "@/components/Pros"
 
 export default function Home() {
 	return (
@@ -14,6 +15,7 @@ export default function Home() {
 			<Products />
 			<ProductsCTA />
 			<Location />
+			<Pros />
 			<Contact />
 			<Footer />
 		</main>
