@@ -3,7 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 export default function Pros() {
 	return (
-		<div className="py-24 sm:py-32" id="pros">
+		<div className="overflow-hidden py-24 sm:py-32" id="pros">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
 					<p className="text-base/7 font-semibold text-lightGreen">
